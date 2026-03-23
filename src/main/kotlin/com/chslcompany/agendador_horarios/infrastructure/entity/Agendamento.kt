@@ -20,7 +20,12 @@ class Agendamento {
     var cliente: String? = null
     var telefoneCliente: String? = null
 
-    @JsonIgnore // ignora na desserialização (entrada)
-    @get:JsonProperty("dataInsercao") // inclui na serialização (saída)
-    var dataInsercao: LocalDateTime = LocalDateTime.now()
+    @JsonIgnore
+    @get:JsonProperty("dataInsercao")
+    var dataInsercao: LocalDateTime? = null
+
+    @PrePersist
+    private fun prePersist() {
+        dataInsercao = LocalDateTime.now()
+    }
 }

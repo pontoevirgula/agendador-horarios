@@ -1,0 +1,23 @@
+1. Faça a alteração no código e suba para o GitHub:
+git add .
+git commit -m "fix: dataInsercao não obrigatório"
+git push
+
+2. Acesse a VPS via SSH:
+ssh root@72.60.240.6
+
+3. Na VPS, entre na pasta do projeto e atualize:
+cd agendador-horarios
+git pull
+
+4. Pare o container antigo, rebuild e suba o novo:
+docker stop api-agendador-horarios
+docker rm api-agendador-horarios
+docker build -t api-agendador-horarios .
+docker run -d -p 8080:8080 --name api-agendador-horarios api-agendador-horarios
+
+5. Verifique se subiu:
+docker ps -a
+
+
+Link - https://claude.ai/chat/febd0cba-d02f-4264-9b21-1ffd7c0b61c6

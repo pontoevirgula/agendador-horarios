@@ -3,7 +3,7 @@ git add .
 git commit -m "fix: dataInsercao não obrigatório"
 git push
 
-2. Acesse a VPS via SSH:
+2. Acesse a VPS via SSH(Abra o Power Shell e digite o comando abaixo e digite a SenhaRoot):
 ssh root@72.60.240.6
 
 3. Na VPS, entre na pasta do projeto e atualize:
